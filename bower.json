@@ -1,0 +1,22 @@
+{
+  "name": "y",
+  "authors": [
+    "Hex <Sergeeva.Anastacia@gmail.com>"
+  ],
+  "description": "",
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.4",
+    "fullpage.js": "^2.8.1",
+    "normalize-css": "^4.1.1"
+  }
+}

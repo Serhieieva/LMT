@@ -1,0 +1,234 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+h2 {
+    font-weight: 400;
+    color: #b29600;
+    font-size: 35px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1040px;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 22px;
+    color: #b29600;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+form .btn,
+form input {
+    font-size: 15px;
+
+    height: 35px;
+    margin: 5px 0;
+
+    border: none;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+}
+
+form .btn {
+    font-size: 15px;
+    line-height: 35px;
+
+    display: inline-block;
+
+    padding: 0 2rem;
+
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #fff;
+    outline: 0;
+    background-color: #24ab6c;
+}
+
+form .btn:hover {
+    background-color: #25c281;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+}
+
+form .btn:active {
+    background-color: #238c53;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+}
+
+form input {
+    width: 200px;
+    padding: 0 10px;
+}
+
+form input:focus {
+    outline: none;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+}
+
+.logo {
+    display: block;
+    height: auto;
+    max-width: 30%;
+    margin: 25px auto;
+}
+
+hr {
+    width: 90%;
+    background-color: #000;
+    border: none;
+}
+
+#header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    padding: 10px 0 0;
+    background-color: #fff;
+}
+
+#header hr {
+height: 4px;
+}
+
+ul#mainMenu{
+    text-align: center;
+}
+
+#mainMenu li {
+    display: inline;
+    margin-right: 30px;
+}
+
+#mainMenu li a{
+    text-decoration: none;
+    color: #383737;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 26px;
+}
+
+#mainMenu .active a, #mainMenu a:hover{
+    color: #b29600;
+}
+
+#story p {
+    font-size: 25px;
+    cursor: pointer;
+    color: #b3b2b2;
+    margin: 60px 70px 60px 180px;
+}
+
+#story p:active, #story p:hover {
+    color: #383737;
+}
+#values ul {
+    text-align: center;
+    display: table;
+}
+
+#values li {
+    display: table-cell;
+    *zoom: 1;
+    *display: inline;
+    font-size: 16px;
+    line-height: 43px;
+    text-transform: capitalize;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+#values img {
+max-width: 200px;
+}
+
+#values h3 {
+    text-align: center;
+}
+
+#values p {
+    font-size: 20px;
+    color: #5c5c5c;
+}
+
+.strategy {
+    text-align: center;
+}
+
+.strategy a {
+    margin-right: 30px;
+    font-size: 49px;
+    color: #b3b2b2;
+    text-decoration: none;
+}
+
+.strategy a:hover, a.active {
+    color: #b29600;
+}
+
+.strategy p {
+    font-size: 28px;
+    color: #5c5c5c;
+}
+
+.portfolio {
+    text-align: center;
+}
+
+.portfolio img {
+    max-width: 855px;
+}
+
+.portfolio hr {
+    width: 40%;
+    height: 1px;
+    color: #5c5c5c;
+}
+.portfolio p {
+    font-size: 26px;
+}
+
+#news time{
+    font-size: 15px;
+    font-style: italic;
+}
+
+#news p{
+    font-size: 15px;
+}
+
+#pressKits ul {
+    font-size: 22px;
+}
+
+#pressKits li {
+    font-size: 19px;
+}
+
+#pressKits a {
+    font-size: 22px;
+}
+
+#newsletter {
+    font-size: 25px;
+}
+
+#jobs p {
+    font-size: 25px;
+}
