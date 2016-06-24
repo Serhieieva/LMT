@@ -107,13 +107,27 @@ hr {
 height: 4px;
 }
 
-ul#mainMenu{
+#mainMenu{
     text-align: center;
 }
 
 #mainMenu li {
-    display: inline;
+    position: relative;
+    display: inline-block;
     margin-right: 30px;
+}
+
+#mainMenu .nested-menu {
+    display: none;
+    position: absolute;
+    text-align: left;
+    width: 1000px;
+    top: 100%;
+    left: 0;
+}
+
+#mainMenu .active .nested-menu{
+    display: block;
 }
 
 #mainMenu li a{
@@ -124,26 +138,33 @@ ul#mainMenu{
     font-size: 26px;
 }
 
-#mainMenu .active a, #mainMenu a:hover{
+#mainMenu > .active > a,
+#mainMenu a:hover,
+#mainMenu .active-parent > a {
     color: #b29600;
 }
 
-#story p {
+#mainMenu .nested-menu a {
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.story p {
     font-size: 25px;
     cursor: pointer;
     color: #b3b2b2;
     margin: 60px 70px 60px 180px;
 }
 
-#story p:active, #story p:hover {
+.story p:active, .story p:hover {
     color: #383737;
 }
-#values ul {
+.values ul {
     text-align: center;
     display: table;
 }
 
-#values li {
+.values li {
     display: table-cell;
     *zoom: 1;
     *display: inline;
@@ -154,15 +175,15 @@ ul#mainMenu{
     margin-left: 15px;
 }
 
-#values img {
+.values img {
 max-width: 200px;
 }
 
-#values h3 {
+.values h3 {
     text-align: center;
 }
 
-#values p {
+.values p {
     font-size: 20px;
     color: #5c5c5c;
 }
@@ -204,31 +225,31 @@ max-width: 200px;
     font-size: 26px;
 }
 
-#news time{
+.news time{
     font-size: 15px;
     font-style: italic;
 }
 
-#news p{
+.news p{
     font-size: 15px;
 }
 
-#pressKits ul {
+.pressKits ul {
     font-size: 22px;
 }
 
-#pressKits li {
+.pressKits li {
     font-size: 19px;
 }
 
-#pressKits a {
+.pressKits a {
     font-size: 22px;
 }
 
-#newsletter {
+.newsletter {
     font-size: 25px;
 }
 
-#jobs p {
+.jobs p {
     font-size: 25px;
 }

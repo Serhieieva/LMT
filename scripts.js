@@ -6,11 +6,14 @@ $(function () {
         paddingTop: '300px',
         anchors: [
             'company',
-            'story', 'mission', 'vision', 'values', 'push', 'partner', 'profitability',
-            'portfolio',
+            'story', 'mission', 'vision', 'values', 'push', 'partner', 'profitability', 'managingBoard', 'supervisoryBoard',
+            'portfolio-1',
+            'portfolio-2', 'portfolio-3', 'portfolio-4', 'portfolio-5',
             'pressNews',
+            'pressKits', 'newsletter',
             'jobs',
-            'contactForm'
+            'contactForm',
+            'legalNote'
         ],
         menu: '#mainMenu',
         onLeave: function (index, nextIndex, direction) {
@@ -21,8 +24,18 @@ $(function () {
             if (nextIndex === $('.fp-section').length) {
                 $arrow.find('.next').addClass('inactive');
             }
+
+            if ([6, 7, 8].indexOf(nextIndex) >= 0) {
+                $.fn.fullpage.setScrollingSpeed(0);
+            } else {
+                $.fn.fullpage.setScrollingSpeed(400);
+            }
+        },
+        afterLoad: function(anchorLink, index){
+            $('#mainMenu').find('li .active').parents('li').addClass('active-parent');
         }
     });
+
 
     /*$arrow.append('<span class="next"></span>');
 
