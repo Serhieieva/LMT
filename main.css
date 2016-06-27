@@ -43,14 +43,24 @@ h4 {
     height: auto !important;
 }
 
+.gold {
+    color: #b29600;
+}
+
+.grey {
+    color: #5c5c5c;
+}
+
 form .btn,
-form input {
+form input,
+textarea {
     font-size: 15px;
 
     height: 35px;
     margin: 5px 0;
 
     border: none;
+    outline-color: transparent;
     -webkit-border-radius: 2px;
     border-radius: 2px;
     -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
@@ -86,12 +96,13 @@ form .btn:active {
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
 }
 
-form input {
+form input{
     width: 200px;
     padding: 0 10px;
 }
 
-form input:focus {
+form input:focus,
+form textarea:focus{
     outline: none;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
@@ -260,6 +271,22 @@ hr {
     color: #5c5c5c;
 }
 
+.board ul {
+    text-align: center;
+    margin: auto;
+    max-width: 1000px;
+}
+
+.board img {
+    border-radius: 50%;
+    width: 100%;
+}
+
+.board li {
+    display: inline-block;
+    width: 40%;
+}
+
 .portfolio {
     text-align: center;
     padding-left: 5%;
@@ -328,6 +355,7 @@ hr {
 }
 
 .newsletter .bordered {
+    padding: 10px;
     color: #b29600;
     max-width: 900px;
     width: 90%;
@@ -336,6 +364,27 @@ hr {
     border: 1px solid #383737;
 }
 
-.jobs p {
+.jobs {
+    text-align: center;
     font-size: 2.5rem;
+}
+
+.jobs p {
+    margin: 30px auto 0 auto;
+    max-width:  1000px;
+}
+
+.jobs p:first-child{
+    margin-top: 0
+}
+
+.jobs a {
+    text-decoration: none;
+    color: #383737;
+}
+
+.legalNote {
+    text-align: center;
+    font-size: 1.8rem;
+    color: #5c5c5c;
 }
