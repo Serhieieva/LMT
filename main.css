@@ -1,6 +1,17 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Montserrat', sans-serif;
+}
+
 body {
+    font-size: 1.6rem;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -12,7 +23,7 @@ ul {
 h2 {
     font-weight: 400;
     color: #b29600;
-    font-size: 35px;
+    font-size: 3.5rem;
     text-align: center;
     margin: 0 auto;
     max-width: 1040px;
@@ -20,12 +31,16 @@ h2 {
 
 h3 {
     font-weight: 700;
-    font-size: 22px;
+    font-size: 2.2rem;
     color: #b29600;
 }
 
 h4 {
-    font-size: 18px;
+    font-size: 1.8rem;
+}
+
+.fp-responsive .section:not(:first-child) {
+    height: auto !important;
 }
 
 form .btn,
@@ -82,11 +97,24 @@ form input:focus {
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
 }
 
+#header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    padding: 2rem 0;
+    background-color: #fff;
+}
+
+#header hr {
+    height: 4px;
+}
+
 .logo {
     display: block;
     height: auto;
-    max-width: 30%;
-    margin: 25px auto;
+    max-width: 20%;
+    min-width: 320px;
+    margin: 0 auto 2rem;
 }
 
 hr {
@@ -95,26 +123,14 @@ hr {
     border: none;
 }
 
-#header {
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    padding: 10px 0 0;
-    background-color: #fff;
-}
-
-#header hr {
-height: 4px;
-}
-
-#mainMenu{
+#mainMenu {
     text-align: center;
 }
 
 #mainMenu li {
     position: relative;
     display: inline-block;
-    margin-right: 30px;
+    margin-right: 3rem;
 }
 
 #mainMenu .nested-menu {
@@ -126,19 +142,20 @@ height: 4px;
     left: 0;
 }
 
-#mainMenu .active .nested-menu{
+#mainMenu .active-parent .nested-menu,
+#mainMenu .active .nested-menu {
     display: block;
 }
 
-#mainMenu li a{
+#mainMenu li a {
     text-decoration: none;
     color: #383737;
     cursor: pointer;
     text-transform: uppercase;
-    font-size: 26px;
+    font-size: 2.6rem;
 }
 
-#mainMenu > .active > a,
+#mainMenu .active > a,
 #mainMenu a:hover,
 #mainMenu .active-parent > a {
     color: #b29600;
@@ -146,11 +163,11 @@ height: 4px;
 
 #mainMenu .nested-menu a {
     text-transform: capitalize;
-    font-size: 18px;
+    font-size: 1.8rem;
 }
 
 .story p {
-    font-size: 25px;
+    font-size: 2.5rem;
     cursor: pointer;
     color: #b3b2b2;
     margin: 60px 70px 60px 180px;
@@ -159,6 +176,7 @@ height: 4px;
 .story p:active, .story p:hover {
     color: #383737;
 }
+
 .values ul {
     text-align: center;
     display: table;
@@ -168,7 +186,7 @@ height: 4px;
     display: table-cell;
     *zoom: 1;
     *display: inline;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 43px;
     text-transform: capitalize;
     margin-right: 15px;
@@ -176,7 +194,7 @@ height: 4px;
 }
 
 .values img {
-max-width: 200px;
+    max-width: 200px;
 }
 
 .values h3 {
@@ -184,7 +202,7 @@ max-width: 200px;
 }
 
 .values p {
-    font-size: 20px;
+    font-size: 2rem;
     color: #5c5c5c;
 }
 
@@ -194,9 +212,10 @@ max-width: 200px;
 
 .strategy a {
     margin-right: 30px;
-    font-size: 49px;
+    font-size: 4.9rem;
     color: #b3b2b2;
     text-decoration: none;
+    cursor: default;
 }
 
 .strategy a:hover, a.active {
@@ -204,52 +223,86 @@ max-width: 200px;
 }
 
 .strategy p {
-    font-size: 28px;
+    font-size: 2.8rem;
     color: #5c5c5c;
 }
 
 .portfolio {
     text-align: center;
+    padding-left: 5%;
+    padding-right: 5%;
 }
 
 .portfolio img {
+    width: 100%;
     max-width: 855px;
+    margin-bottom: 3%;
 }
 
 .portfolio hr {
     width: 40%;
-    height: 1px;
-    color: #5c5c5c;
-}
-.portfolio p {
-    font-size: 26px;
+    height: 2px;
+    background-color: #b3b2b2;
 }
 
-.news time{
-    font-size: 15px;
+.portfolio p, .portfolio a {
+    font-size: 2.6rem;
+    color: #b29600;
+}
+
+.portfolio a {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.news time {
+    font-size: 1.5rem;
     font-style: italic;
 }
 
-.news p{
-    font-size: 15px;
+.news p {
+    font-size: 1.5rem;
 }
 
 .pressKits ul {
-    font-size: 22px;
+    font-size: 2.2rem;
+}
+
+.pressKits .wrapper {
+    display: inline-block;
+    width: 40%;
+}
+
+.pressKits .bordered {
+    border: 1px solid #b29600;
+}
+
+.pressKits img {
+    width: 100%;
 }
 
 .pressKits li {
-    font-size: 19px;
+    font-size: 1.9rem;
 }
 
 .pressKits a {
-    font-size: 22px;
+    font-size: 2.2rem;
 }
 
 .newsletter {
-    font-size: 25px;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.newsletter .bordered{
+    color: #b29600;
+    max-width: 900px;
+    width: 90%;
+    display: inline-block;
+    margin: 10px;
+    border: 1px solid #383737;
 }
 
 .jobs p {
-    font-size: 25px;
+    font-size: 2.5rem;
 }

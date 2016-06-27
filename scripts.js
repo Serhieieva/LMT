@@ -2,11 +2,22 @@ $(function () {
     'use strict';
     var $arrow = $('#fp-arrow');
 
+    var $mainMenu = $('#mainMenu');
+    var $mainMenuItems = $mainMenu.find('> li');
+
     $('#fullpage').fullpage({
-        paddingTop: '300px',
+        paddingTop: '230px',
+        easing: 'easeInOutCubic',
+        easingcss3: 'cubic-bezier(0.390, 0.575, 0.565, 1.000)',
+        scrollBar: false,
+        menu: '#mainMenu',
+        touchSensitivity: 15,
+        normalScrollElementTouchThreshold: 5,
+        responsiveWidth: 768,
+        responsiveHeight: 768,
         anchors: [
             'company',
-            'story', 'mission', 'vision', 'values', 'push', 'partner', 'profitability', 'managingBoard', 'supervisoryBoard',
+            'story', 'mission', 'vision', 'values', 'partner', 'push', 'profitability', 'managingBoard', 'supervisoryBoard',
             'portfolio-1',
             'portfolio-2', 'portfolio-3', 'portfolio-4', 'portfolio-5',
             'pressNews',
@@ -15,7 +26,6 @@ $(function () {
             'contactForm',
             'legalNote'
         ],
-        menu: '#mainMenu',
         onLeave: function (index, nextIndex, direction) {
             // Remove the inactive class from arrow
             $arrow.find('.next').removeClass('inactive');
@@ -30,9 +40,9 @@ $(function () {
             } else {
                 $.fn.fullpage.setScrollingSpeed(400);
             }
+
         },
-        afterLoad: function(anchorLink, index){
-            $('#mainMenu').find('li .active').parents('li').addClass('active-parent');
+        afterLoad: function (anchorLink, index) {
         }
     });
 

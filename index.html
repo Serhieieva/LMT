@@ -11,7 +11,8 @@
         <link rel="stylesheet" href="main.css">
 
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="bower_components/fullpage.js/dist/jquery.fullpage.min.js"></script>
+        <script type="text/javascript" src="bower_components/fullpage.js/vendors/scrolloverflow.min.js"></script>
+        <script src="bower_components/fullpage.js/dist/jquery.fullpage.js"></script>
         <script src="scripts.js"></script>
     </head>
     <body>
@@ -19,33 +20,39 @@
             <img src="img/LuftMediaTechnologies.jpg" class="logo" alt="News spectator"/>
             <hr>
             <ul id="mainMenu">
-                <li data-menuanchor="company" class="active">
-                    <a href="#company">company</a>
+                <li data-menuanchor="story mission vision values partner push profitability managingBoard supervisoryBoard"
+                    class="active">
+                    <a href="#story">company</a>
                     <ul class="nested-menu">
-                        <li data-menuanchor="company-story" class="active"><a href="#company-story">story</a>
-                        <li data-menuanchor="company-mission" class="active"><a href="#company-mission">mission</a>
-                        <li data-menuanchor="company-vision" class="active"><a href="#company-vision">vision</a>
-                        <li data-menuanchor="company-values" class="active"><a href="#company-values">values</a>
-                        <li data-menuanchor="company-partner" class="active"><a href="#company-partner">strategy</a>
-                        <li data-menuanchor="company-managingBoard" class="active"><a href="#company-managingBoard">managing board</a>
-                        <li data-menuanchor="company-supervisoryBoard" class="active"><a href="#company-supervisoryBoard">supervisory board</a>
+                        <li data-menuanchor="story"><a href="#story">story</a>
+                        <li data-menuanchor="mission"><a href="#mission">mission</a>
+                        <li data-menuanchor="vision"><a href="#vision">vision</a>
+                        <li data-menuanchor="values"><a href="#values">values</a>
+                        <li data-menuanchor="partner push profitability"><a href="#partner">strategy</a>
+                        <li data-menuanchor="managingBoard"><a href="#managingBoard">managing
+                            board</a>
+                        <li data-menuanchor="supervisoryBoard"><a href="#supervisoryBoard">supervisory
+                            board</a>
                     </ul>
                 </li>
-                <li data-menuanchor="portfolio-1"><a href="#portfolio-1">portfolio</a></li>
-                <li data-menuanchor="pressNews">
+                <li data-menuanchor="portfolio-1 portfolio-2 portfolio-3 portfolio-4 portfolio-5">
+                    <a href="#portfolio-1">portfolio</a>
+                </li>
+                <li data-menuanchor="pressNews pressKits newsletter">
                     <a href="#pressNews">press</a>
                     <ul class="nested-menu">
-                        <li data-menuanchor="pressNews"><a href="#pressNews">news</a></li>
-                        <li data-menuanchor="pressKits"><a href="#pressKits">press kits</a></li>
-                        <li data-menuanchor="newsletter"><a href="#newsletter">newsletter</a></li>
+                        <li data-menuanchor="pressNews"><a href="#pressNews">news</a>
+                        <li data-menuanchor="pressKits"><a href="#pressKits">press kits</a>
+                        <li data-menuanchor="newsletter"><a href="#newsletter">newsletter</a>
                     </ul>
                 </li>
                 <li data-menuanchor="jobs"><a href="#jobs">jobs</a></li>
-                <li data-menuanchor="contactForm">
+                <li data-menuanchor="contactForm legalNote">
                     <a href="#contactForm">contact</a>
                     <ul class="nested-menu">
-                        <li data-menuanchor="contactForm"><a href="#contactForm">contact form</a></li>
-                        <li data-menuanchor="legalNote"><a href="#legalNote">legal note</a></li>
+                        <li data-menuanchor="contactForm"><a href="#contactForm">contact
+                            form</a>
+                        <li data-menuanchor="legalNote"><a href="#legalNote">legal note</a>
                     </ul>
                 </li>
             </ul>
@@ -56,7 +63,7 @@
                 <h2>We create powerful web technologies that faciliate digital knowledge acquisition.</h2>
             </div>
 
-            <div class="section story" data-anchor="company-story">
+            <div class="section story" data-anchor="story">
                 <p>Today digital knowledge acquisition does not keep up with technological
                     capabilities. Reading and learning online is still time-intensive and effortful.</p>
                 <p>Most platforms only provide superficial information and hardly any
@@ -72,16 +79,16 @@
                 <p> We would love to see you using our products and supporting our company
             </div>
 
-            <div class="section" data-anchor="company-mission">
+            <div class="section" data-anchor="mission">
                 <h2>We create powerful web technologies that faciliate digital knowledge acquisition.</h2>
             </div>
 
-            <div class="section vision" data-anchor="company-vision">
+            <div class="section vision" data-anchor="vision">
                 <h2>We strive to become the largest digital knowledge network worldwide and the go-to place for
                     personalized and contextualized information.</h2>
             </div>
 
-            <div class="section values" data-anchor="company-values">
+            <div class="section values" data-anchor="values">
                 <ul>
                     <li>
                         <img src="img/Personalisierung.png" alt="Personalization">
@@ -107,32 +114,32 @@
                 </ul>
             </div>
 
-            <div class="section strategy" data-anchor="company-partner">
-                <a href="#">PUSH</a>
+            <div class="section strategy" data-anchor="partner">
                 <a href="#" class="active">PARTNER</a>
+                <a href="#">PUSH</a>
                 <a href="#">PROFITABILITY</a>
                 <p>We like to push things to the market, actively driving innovations instead of passively
                     administering or copying them.</p>
             </div>
 
-            <div class="section strategy" data-anchor="company-push">
-                <a href="#" class="active">PUSH</a>
+            <div class="section strategy" data-anchor="push">
                 <a href="#">PARTNER</a>
+                <a href="#" class="active">PUSH</a>
                 <a href="#">PROFITABILITY</a>
                 <p>We partner with those willing to go beyond the status quo to develop and use new solutions for
                     digital knowledge acquisiton. We are looking for long-term relationships with all stakeholders
                     alike.</p>
             </div>
 
-            <div class="section strategy" data-anchor="company-profitability">
-                <a href="#">PUSH</a>
+            <div class="section strategy" data-anchor="profitability">
                 <a href="#">PARTNER</a>
+                <a href="#">PUSH</a>
                 <a href="#" class="active">PROFITABILITY</a>
                 <p>We aim for early profitability for our partners and ourselves. Monetizing digital products from
                     the start is key to a sound commercial basis and fairer to all stakeholders.</p>
             </div>
 
-            <div class="section" data-anchor="company-managingBoard">
+            <div class="section" data-anchor="managingBoard">
                 <ul>
                     <li><img src="" alt="">
                         <h3>Lukas J.E. Luft</h3>
@@ -153,7 +160,7 @@
                 </ul>
             </div>
 
-            <div class="section" data-anchor="company-supervisoryBoard">
+            <div class="section" data-anchor="supervisoryBoard">
                 <ul>
                     <li><img src="" alt="">
                         <h3>to be announced</h3>
@@ -213,8 +220,8 @@
                 <p></p>
             </div>
 
-            <div class="section" data-anchor="pressKits">
-                <div>
+            <div class="section pressKits" data-anchor="pressKits">
+                <div class="wrapper bordered">
                     <h3>Press Kit includes:</h3>
                     <ul>
                         <li>Individual pictures of Managing Board</li>
@@ -226,21 +233,21 @@
                         <li>Booklet on News Spectator</li>
                     </ul>
                 </div>
-                <div>
+                <div class="wrapper">
                     <img src="#" alt="">
                 </div>
-                <div>
+                <div class="wrapper">
                     <img src="img/LuftMediaTechnologies.jpg" alt="LUFT MEDIA TECHNOLOGIES">
                     <img src="img/NewsSpectator.png" alt="News Spectator">
                 </div>
-                <div>
+                <div class="wrapper bordered">
                     <a href="">download PresKit (German)</a>
                     <a href="">download PresKit (English)</a>
                 </div>
             </div>
 
-            <div class="section" data-anchor="newsletter">
-                <div>Subscribe to our corporate newsletter now to stay up-to-date with everything that is happening
+            <div class="section newsletter" data-anchor="newsletter">
+                <div class="bordered">Subscribe to our corporate newsletter now to stay up-to-date with everything that is happening
                     at LUFT MEDIA TECHNOLOGIES.
                 </div>
                 <form action="#">
