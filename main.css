@@ -97,9 +97,31 @@ form input:focus {
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
 }
 
+.fp-viewing-company #header {
+    height: 100%;
+    width: 100%;
+}
+
+.fp-viewing-company .logo {
+    max-width: 30%;
+    margin: 5rem auto;
+    z-index: 111;
+}
+
+.fp-viewing-company #header .company {
+    max-height: inherit;
+    margin: 10% auto;
+    display: block;
+}
+
+.fp-viewing-company #mainMenu {
+    margin: auto;
+    z-index: 3;
+}
+
 #header {
     position: fixed;
-    z-index: 1;
+    z-index: 3;
     width: 100%;
     padding: 2rem 0;
     background-color: #fff;
@@ -107,6 +129,12 @@ form input:focus {
 
 #header hr {
     height: 4px;
+}
+
+#header .company {
+    overflow: hidden;
+    max-height: 0;
+    margin: 0;
 }
 
 .logo {
@@ -123,8 +151,13 @@ hr {
     border: none;
 }
 
+.animate {
+    transition: all .4s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+}
+
 #mainMenu {
     text-align: center;
+    z-index: 1;
 }
 
 #mainMenu li {
@@ -294,7 +327,7 @@ hr {
     text-align: center;
 }
 
-.newsletter .bordered{
+.newsletter .bordered {
     color: #b29600;
     max-width: 900px;
     width: 90%;

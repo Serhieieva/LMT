@@ -6,7 +6,7 @@ $(function () {
     var $mainMenuItems = $mainMenu.find('> li');
 
     $('#fullpage').fullpage({
-        paddingTop: '230px',
+        // paddingTop: '230px',
         easing: 'easeInOutCubic',
         easingcss3: 'cubic-bezier(0.390, 0.575, 0.565, 1.000)',
         scrollBar: false,
@@ -38,11 +38,9 @@ $(function () {
             if ([6, 7, 8].indexOf(nextIndex) >= 0) {
                 $.fn.fullpage.setScrollingSpeed(0);
             } else {
-                $.fn.fullpage.setScrollingSpeed(400);
+                $.fn.fullpage.setScrollingSpeed(700);
             }
 
-        },
-        afterLoad: function (anchorLink, index) {
         }
     });
 
