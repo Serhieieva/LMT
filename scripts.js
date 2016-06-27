@@ -35,7 +35,7 @@ $(function () {
                 $arrow.find('.next').addClass('inactive');
             }
 
-            if ([6, 7, 8].indexOf(nextIndex) >= 0) {
+            if ([6, 7, 8, 12, 13, 14, 15].indexOf(nextIndex) >= 0) {
                 $.fn.fullpage.setScrollingSpeed(0);
             } else {
                 $.fn.fullpage.setScrollingSpeed(400);
