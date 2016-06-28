@@ -220,7 +220,6 @@ hr {
     *display: inline;
     font-size: 1.6rem;
     line-height: 43px;
-    text-transform: capitalize;
     margin-right: 15px;
     margin-left: 15px;
 }
@@ -231,6 +230,7 @@ hr {
 
 .values h3 {
     text-align: center;
+    text-transform: capitalize;
 }
 
 .values p {
