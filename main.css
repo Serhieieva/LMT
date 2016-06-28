@@ -81,7 +81,6 @@ h4 {
 .fp-viewing-company .logo {
     max-width: 30%;
     margin: 5rem auto;
-    z-index: 111;
 }
 
 .fp-viewing-company #header .company {
@@ -100,6 +99,7 @@ h4 {
     top: 0;
     z-index: 3;
     width: 100%;
+    min-width: 320px;
     padding: 2rem 0 1rem;
     background-color: #fff;
 
@@ -124,9 +124,13 @@ h4 {
     display: block;
     height: auto;
     max-width: 20%;
-    min-width: 320px;
+    min-width: 280px;
     margin: 0 auto 2rem;
     cursor: pointer;
+}
+
+.sandwich {
+    display: none;
 }
 
 hr {
@@ -142,11 +146,16 @@ hr {
 #mainMenu {
     text-align: center;
     z-index: 1;
+
+    transition: background .2s cubic-bezier(0.390, 0.575, 0.565, 1.000);
 }
 
 #mainMenu li {
     position: relative;
     display: inline-block;
+}
+
+#mainMenu li:not(:last-child) {
     margin-right: 3rem;
 }
 
@@ -470,6 +479,10 @@ hr {
     min-width: 390px;
     width: 60%;
     margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .newsletter form button,
@@ -480,9 +493,7 @@ hr {
     height: 55px;
 
     border: none;
-    -webkit-border-radius: 2px;
     border-radius: 2px;
-    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
 }
 
@@ -496,12 +507,7 @@ hr {
 .newsletter form button {
     width: 23%;
     font-size: 25px;
-    line-height: 55px;
 
-    display: inline-block;
-
-    cursor: pointer;
-    text-align: center;
     text-transform: uppercase;
 
     color: #fff;
@@ -702,25 +708,122 @@ hr {
 }
 
 @media screen and (max-width: 960px) {
-    html {
-        font-size: 50%;
-    }
 }
 
 @media screen and (max-width: 768px) {
-    html {
-        font-size: 50%;
+    .fp-viewing-company .logo,
+    .logo {
+        margin: 1rem 0;
+        padding-right: 6rem;
+    }
+
+    .fp-viewing-company #mainMenu li {
+        display: inline-block;
+    }
+
+    .sandwich {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        position: absolute;
+        right: 5%;
+        top: 5rem;
+
+        width: 5rem;
+        height: 4rem;
+    }
+
+    .sandwich .icon-bar {
+        display: block;
+        width: 90%;
+        height: 4px;
+        background-color: #000;
+        margin: 3px;
+        border-radius: 3px;
+    }
+
+    .menu-active .close-menu {
+        position: absolute;
+        right: 5%;
+        top: 5%;
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        background: url(data:image/png;base64,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) no-repeat;
+    }
+
+    #mainMenu li {
+        display: none;
+    }
+
+    .menu-active,
+    .menu-active body {
+        overflow-y: auto !important;
+    }
+
+    .menu-active #header {
+        position: absolute;
+    }
+
+    .menu-active #mainMenu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: #fff;
+        text-align: left;
+        padding: 5%;
+    }
+
+    .menu-active #mainMenu li {
+        display: block;
+        padding-bottom: 1rem;
+    }
+
+    .menu-active #mainMenu > li:not(:first-child) {
+        padding-top: 1.5rem;
+    }
+
+    .menu-active #mainMenu .nested-menu {
+        display: block;
+    }
+
+    .menu-active #mainMenu .active-parent .nested-menu,
+    .menu-active #mainMenu .active .nested-menu {
+        display: block;
+    }
+
+    .menu-active #mainMenu .nested-menu a:before {
+        content: "";
+    }
+
+    #mainMenu li.active {
+        margin-right: 0;
+    }
+
+    #mainMenu li.active {
+        display: inline-block;
+    }
+
+    #mainMenu .nested-menu {
+        position: relative;
+        width: auto;
+    }
+
+    #mainMenu .active-parent .nested-menu,
+    #mainMenu .active .nested-menu {
+        display: inline-block;
+    }
+
+    #mainMenu .nested-menu a:before {
+        content: " / ";
     }
 }
 
 @media screen and (max-width: 480px) {
-    html {
-        font-size: 50%;
-    }
 }
 
 @media screen and (max-width: 320px) {
-    html {
-        font-size: 50%;
-    }
 }

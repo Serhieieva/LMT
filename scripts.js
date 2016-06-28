@@ -46,7 +46,7 @@ $(function () {
                 var elements = $story.find('p');
                 var active = $story.data('active');
 
-                if ((direction === 'up' && active > 0) || (direction === 'down' && active + 1 < elements.length)) {
+                if ((direction === 'up' && active > 0) || (direction === 'down' && active + 1 < elements.length) && $(window).width() > 767) {
 
                     elements.map(function (i, p) {
                         $(p).removeClass('active');
@@ -96,6 +96,14 @@ $(function () {
 
     $('.logo').on('click', function () {
         $.fn.fullpage.moveTo('company');
+    });
+
+    $('.sandwich').on('click', function () {
+        $('html').addClass('menu-active');
+
+        $('#mainMenu li, .close-menu').one('click', function () {
+            $('html').removeClass('menu-active');
+        });
     });
 
     function setSize() {
