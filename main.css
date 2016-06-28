@@ -22,6 +22,7 @@ body {
 ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 h2 {
@@ -49,6 +50,11 @@ h4 {
 
 .fp-tableCell {
     transition: padding .4s cubic-bezier(0.390, 0.575, 0.565, 1.000);
+    padding-bottom: 1px;
+}
+
+.iScrollLoneScrollbar {
+    width: 4px !important;
 }
 
 .gold {
@@ -120,6 +126,7 @@ h4 {
     max-width: 20%;
     min-width: 320px;
     margin: 0 auto 2rem;
+    cursor: pointer;
 }
 
 hr {
@@ -179,7 +186,7 @@ hr {
 .story p {
     font-size: 2.5rem;
     color: #b3b2b2;
-    margin: 2% 5%;
+    padding: 1% 5%;
 }
 
 .story p.active {
@@ -270,12 +277,13 @@ hr {
 .portfolio img {
     width: 100%;
     max-width: 855px;
-    margin-bottom: 3%;
 }
 
 .portfolio hr {
     width: 40%;
     height: 2px;
+    margin-bottom: 3%;
+    margin-top: 3%;
     background-color: #b3b2b2;
 }
 
@@ -285,6 +293,7 @@ hr {
 }
 
 .portfolio a {
+    display: block;
     cursor: pointer;
     text-decoration: none;
 }
@@ -298,29 +307,89 @@ hr {
     font-size: 1.5rem;
 }
 
-.pressKits ul {
-    font-size: 2.2rem;
+.pressKits .wrapper {
+    padding: 1rem;
+    margin: auto;
+    font-size: 0;
+    max-width: 1200px;
+    text-align: center;
 }
 
-.pressKits .wrapper {
+.pressKits .item {
+    position: relative;
     display: inline-block;
-    width: 40%;
+    width: 75%;
+    padding-top: 25%;
+    height: auto;
+    text-align: left;
+}
+
+.pressKits .item-inner {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: 10px;
+}
+
+@media (min-width: 1000px) {
+    .pressKits .item {
+        width: 50%;
+        padding-top: 22%;
+    }
 }
 
 .pressKits .bordered {
     border: 1px solid #b29600;
+    padding: 1rem;
+}
+
+.pressKits h3 {
+    font-size: 2.2rem;
+    color: #383737;
+    margin-top: 0;
+}
+
+.pressKits .banners {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.pressKits .banners img {
+    width: 80%;
+}
+
+.pressKit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.pressKits a {
+    font-size: 2.2rem;
+    color: #b29600;
+    padding: 1rem;
 }
 
 .pressKits img {
     width: 100%;
 }
 
-.pressKits li {
-    font-size: 1.9rem;
+.pressKits ul {
+    padding-left: 4rem;
 }
 
-.pressKits a {
-    font-size: 2.2rem;
+.pressKits li {
+    font-size: 1.9rem;
+    color: #383737;
+}
+
+.pressKits li:before {
+    content: "- ";
 }
 
 .newsletter {
@@ -570,7 +639,7 @@ form input:focus {
 
 @media screen and (max-width: 1200px) {
     html {
-        font-size: 50%;
+        font-size: 54%;
     }
 }
 

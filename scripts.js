@@ -5,33 +5,46 @@ $(function () {
     var $mainMenu = $('#mainMenu');
     var $mainMenuItems = $mainMenu.find('> li');
 
-    var story = $('.story');
+    var $story = $('.story');
+    var $strategy = $('.strategy');
+    var $portfolio = $('.portfolio');
 
     $('#fullpage').fullpage({
+        paddingTop: $('#header').outerHeight(),
         easingcss3: 'cubic-bezier(0.390, 0.575, 0.565, 1.000)',
         menu: '#mainMenu',
-        responsiveWidth: 768,
-        responsiveHeight: 768,
-        fitToSection: false,
-        anchors: [
-            'company',
-            'story', 'mission', 'vision', 'values', 'partner', 'push', 'profitability', 'managingBoard', 'supervisoryBoard',
-            'portfolio-1',
-            'portfolio-2', 'portfolio-3', 'portfolio-4', 'portfolio-5',
-            'pressNews',
-            'pressKits', 'newsletter',
-            'jobs',
-            'contactForm',
-            'legalNote'
-        ],
+        scrollOverflow: true,
+        scrollOverflowOptions: {
+            tap: true,
+            scrollbars: true,
+            mouseWheel: false,
+            hideScrollbars: false,
+            fadeScrollbars: false,
+            disableMouse: false,
+            interactiveScrollbars: true
+        },
+        recordHistory: false,
+        touchSensitivity: 25,
+        normalScrollElementTouchThreshold: 15,
+        // anchors: [
+        //     'company',
+        //     'story', 'mission', 'vision', 'values', 'partner', 'push', 'profitability', 'managingBoard', 'supervisoryBoard',
+        //     'portfolio-1',
+        //     'portfolio-2', 'portfolio-3', 'portfolio-4', 'portfolio-5',
+        //     'pressNews',
+        //     'pressKits', 'newsletter',
+        //     'jobs',
+        //     'contactForm',
+        //     'legalNote'
+        // ],
         onLeave: function (index, nextIndex, direction) {
-            if(index > 1) {
-                setPadding();
+            if (index > 1) {
+                setSize();
             }
 
             if (index === 2 && (nextIndex === 1 || nextIndex === 3)) {
-                var active = story.data('active');
-                var elements = story.find('p');
+                var elements = $story.find('p');
+                var active = $story.data('active');
 
                 if ((direction === 'up' && active > 0) || (direction === 'down' && active + 1 < elements.length)) {
 
@@ -46,11 +59,10 @@ $(function () {
                     }
 
                     elements.eq(active).addClass('active');
-                    story.data('active', active);
+                    $story.data('active', active);
 
                     return false;
                 }
-
             }
 
             // Remove the inactive class from arrow
@@ -61,7 +73,12 @@ $(function () {
                 $arrow.find('.next').addClass('inactive');
             }
 
-            if ([6, 7, 8, 12, 13, 14, 15].indexOf(nextIndex) >= 0) {
+            var noScroll = [7, 12, 13, 14].indexOf(nextIndex) >= 0;
+            noScroll = noScroll || [6, 11].indexOf(nextIndex) >= 0 && direction === 'up';
+            noScroll = noScroll || [8, 15].indexOf(nextIndex) >= 0 && direction === 'down';
+
+
+            if (noScroll) {
                 $.fn.fullpage.setScrollingSpeed(0);
             } else {
                 $.fn.fullpage.setScrollingSpeed(700);
@@ -69,15 +86,32 @@ $(function () {
 
         },
         afterResize: function () {
-            setPadding();
+            setSize();
+            $.fn.fullpage.reBuild();
         },
         afterRender: function () {
-            setPadding();
+            setSize();
         }
     });
 
-    function setPadding() {
-        $('.section .fp-tableCell').css('padding-top', $('#header').outerHeight());
+    $('.logo').on('click', function () {
+        $.fn.fullpage.moveTo('company');
+    });
+
+    function setSize() {
+        //$('.section .fp-tableCell').css('padding-top', $('#header').outerHeight());
+
+        var portfolioContentHeight = Math.max.apply(null, $portfolio.find('.portfolio-content').map(function () {
+            return $(this).height();
+        }).get());
+
+        $portfolio.find('.portfolio-content').height(portfolioContentHeight);
+
+        var strategyContentHeight = Math.max.apply(null, $strategy.find('p').map(function () {
+            return $(this).height();
+        }).get());
+
+        $strategy.find('p').height(strategyContentHeight);
     }
 
 
