@@ -1,11 +1,15 @@
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
-* {
+*,
+*:before,
+*:after {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
 }
 
 html {
+    min-width: 320px;
     font-size: 62.5%;
     font-family: 'Montserrat', sans-serif;
 }
@@ -128,22 +132,28 @@ h4 {
 }
 
 .fp-viewing-company #header .company {
-    max-height: inherit;
-    margin: 10% auto;
+    opacity: 1;
+    margin: auto;
     display: block;
+    max-height: inherit;
 }
 
 .fp-viewing-company #mainMenu {
     margin: auto;
-    z-index: 3;
 }
 
 #header {
     position: fixed;
+    top: 0;
     z-index: 3;
     width: 100%;
     padding: 2rem 0;
     background-color: #fff;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
 }
 
 #header hr {
@@ -153,6 +163,7 @@ h4 {
 #header .company {
     overflow: hidden;
     max-height: 0;
+    opacity: 0;
     margin: 0;
 }
 
@@ -220,12 +231,11 @@ hr {
 
 .story p {
     font-size: 2.5rem;
-    cursor: pointer;
     color: #b3b2b2;
-    margin: 60px 70px 60px 180px;
+    margin: 2% 5%;
 }
 
-.story p:active, .story p:hover {
+.story p.active {
     color: #383737;
 }
 
@@ -440,4 +450,34 @@ hr {
     text-align: center;
     font-size: 1.8rem;
     color: #5c5c5c;
+}
+
+@media screen and (max-width: 1200px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    html {
+        font-size: 50%;
+    }
 }

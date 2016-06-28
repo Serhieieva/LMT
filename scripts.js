@@ -5,16 +5,14 @@ $(function () {
     var $mainMenu = $('#mainMenu');
     var $mainMenuItems = $mainMenu.find('> li');
 
+    var story = $('.story');
+
     $('#fullpage').fullpage({
-        // paddingTop: '230px',
-        easing: 'easeInOutCubic',
         easingcss3: 'cubic-bezier(0.390, 0.575, 0.565, 1.000)',
-        scrollBar: false,
         menu: '#mainMenu',
-        touchSensitivity: 15,
-        normalScrollElementTouchThreshold: 5,
         responsiveWidth: 768,
         responsiveHeight: 768,
+        fitToSection: false,
         anchors: [
             'company',
             'story', 'mission', 'vision', 'values', 'partner', 'push', 'profitability', 'managingBoard', 'supervisoryBoard',
@@ -27,6 +25,34 @@ $(function () {
             'legalNote'
         ],
         onLeave: function (index, nextIndex, direction) {
+            if(index > 1) {
+                setPadding();
+            }
+
+            if (index === 2 && (nextIndex === 1 || nextIndex === 3)) {
+                var active = story.data('active');
+                var elements = story.find('p');
+
+                if ((direction === 'up' && active > 0) || (direction === 'down' && active + 1 < elements.length)) {
+
+                    elements.map(function (i, p) {
+                        $(p).removeClass('active');
+                    });
+
+                    if (direction === 'up') {
+                        active--;
+                    } else {
+                        active++;
+                    }
+
+                    elements.eq(active).addClass('active');
+                    story.data('active', active);
+
+                    return false;
+                }
+
+            }
+
             // Remove the inactive class from arrow
             $arrow.find('.next').removeClass('inactive');
 
@@ -41,8 +67,18 @@ $(function () {
                 $.fn.fullpage.setScrollingSpeed(700);
             }
 
+        },
+        afterResize: function () {
+            setPadding();
+        },
+        afterRender: function () {
+            setPadding();
         }
     });
+
+    function setPadding() {
+        $('.section .fp-tableCell').css('padding-top', $('#header').outerHeight());
+    }
 
 
     /*$arrow.append('<span class="next"></span>');
