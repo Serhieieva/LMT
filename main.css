@@ -402,6 +402,7 @@ hr {
 
 .pressKits .bordered {
     border: 1px solid #b29600;
+    box-shadow: 0 0 5px 1px rgba(178, 150, 0, 0.14);
     padding: 1rem;
 }
 
@@ -483,7 +484,7 @@ hr {
     max-width: 900px;
     width: 90%;
     display: inline-block;
-    margin: 10px;
+    margin: 10px 10px 6rem 10px;
     border: 1px solid #383737;
 }
 
@@ -525,17 +526,12 @@ hr {
 
     color: #fff;
     outline: 0;
-    background-color: #b3b2b2;
+    background-color: #24aa6b;
 }
 
-.newsletter form button:hover {
-    background-color: #abaaaa;
-    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
-    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
-}
-
-.newsletter form button:active {
-    background-color: #b29600;
+.newsletter form button:hover,
+.newsletter form button:active{
+    background-color: #259C60;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
 }
@@ -623,18 +619,26 @@ hr {
 }
 
 .contactForm button {
-    background: #c0c0c0 url(img/mail.png) no-repeat;
+    color: #fff;
+    border-radius: 2px;
+    text-shadow: 0 0 3px rgba(0, 0, 0, .3);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16), 0 2px 10px 0 rgba(0, 0, 0, .12);
+    text-transform: uppercase;
+    background-color: #c0c0c0;
     display: block;
     cursor: pointer;
-    margin-left: 63%;
+    margin-left: 80%;
     margin-top: 5px;
     border: none;
-    width: 92px;
-    height: 68px;
+    width: 97px;
+    height: 46px;
 }
 
-.contactForm button:hover {
+.contactForm button:hover,
+.contactForm button:active{
     background-color: #b3b2b2;
+    -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
 }
 
 .contactForm button:focus {
@@ -653,6 +657,11 @@ hr {
 .legalNote .contactData {
     display: inline-block;
     text-align: left;
+}
+
+.legalNote .postalCode,
+.legalNote .addressLocality {
+    display: inline-block;
 }
 
 .legalNote span {
@@ -721,6 +730,17 @@ hr {
 
     .pressNews p {
         font-size: 1.8rem;
+    }
+
+
+}
+
+@media screen and (min-width: 480px) and (max-width: 1000px){
+    .pressKits .item{
+        width: 460px;
+    }
+    .pressKits .item img {
+        width: 100%;
     }
 }
 
