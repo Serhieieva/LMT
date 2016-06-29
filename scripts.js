@@ -1,6 +1,5 @@
 $(function () {
     'use strict';
-    var $arrow = $('#fp-arrow');
 
     var $mainMenu = $('#mainMenu');
     var $mainMenuItems = $mainMenu.find('> li');
@@ -8,6 +7,7 @@ $(function () {
     var $story = $('.story');
     var $strategy = $('.strategy');
     var $portfolio = $('.portfolio');
+    var $arrow = $('#fp-arrow');
 
     $('#fullpage').fullpage({
         paddingTop: $('#header').outerHeight(),
@@ -26,17 +26,6 @@ $(function () {
         recordHistory: false,
         touchSensitivity: 30,
         normalScrollElementTouchThreshold: 1,
-        // anchors: [
-        //     'company',
-        //     'story', 'mission', 'vision', 'values', 'partner', 'push', 'profitability', 'managingBoard', 'supervisoryBoard',
-        //     'portfolio-1',
-        //     'portfolio-2', 'portfolio-3', 'portfolio-4', 'portfolio-5',
-        //     'pressNews',
-        //     'pressKits', 'newsletter',
-        //     'jobs',
-        //     'contactForm',
-        //     'legalNote'
-        // ],
         onLeave: function (index, nextIndex, direction) {
             if (index > 1) {
                 setSize();
@@ -69,7 +58,7 @@ $(function () {
             $arrow.find('.next').removeClass('inactive');
 
             // Add inactive class if needed
-            if (nextIndex === $('.fp-section').length) {
+            if (nextIndex === 1 || nextIndex === $('.fp-section').length) {
                 $arrow.find('.next').addClass('inactive');
             }
 
@@ -84,6 +73,11 @@ $(function () {
                 $.fn.fullpage.setScrollingSpeed(700);
             }
 
+        },
+        afterLoad : function (anchorLink, index) {
+            if (index !== 1 && index !== $('.fp-section').length) {
+                $arrow.find('.next').removeClass('inactive');
+            }
         },
         afterResize: function () {
             $.fn.fullpage.reBuild();
@@ -106,6 +100,13 @@ $(function () {
         });
     });
 
+    $arrow.append($('<span class="next inactive animate"></span>'));
+
+    // Add actions to the arrows
+    $arrow.find('.next').on('click', function () {
+        $.fn.fullpage.moveSectionDown();
+    });
+
     function setSize() {
         var portfolioContentHeight = Math.max.apply(null, $portfolio.find('.portfolio-content').map(function () {
             return $(this).height();
@@ -120,16 +121,7 @@ $(function () {
         $strategy.find('p').height(strategyContentHeight);
     }
 
-
-    /*$arrow.append('<span class="next"></span>');
-
-     // Add actions to the arrows
-     $arrow.find('.next').on('click', function () {
-     if ($(this).hasClass('next')) {
-     $.fn.fullpage.moveSectionDown();
-     }
-     });
-
+    /*
      // Toggle footer
      var $footer = $('.footer');
      $('.footer-open').on('click', function (event) {

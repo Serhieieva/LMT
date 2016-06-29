@@ -78,20 +78,33 @@ h4 {
     width: 100%;
 }
 
+.fp-viewing-company .logo-wrapper {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
 .fp-viewing-company .logo {
-    max-width: 30%;
-    margin: 5rem auto;
+    margin: 1rem 0;
+    width: 80%;
+    max-width: 1000px;
 }
 
 .fp-viewing-company #header .company {
     opacity: 1;
-    margin: auto;
-    display: block;
     max-height: inherit;
+
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    font-size: 3.8rem;
 }
 
 .fp-viewing-company #mainMenu {
-    margin: auto;
+    margin: 0 auto;
 }
 
 #header {
@@ -118,6 +131,15 @@ h4 {
     max-height: 0;
     opacity: 0;
     margin: 0;
+}
+
+.logo {
+    display: block;
+    height: auto;
+    max-width: 20%;
+    min-width: 280px;
+    margin: 0 auto 2rem;
+    cursor: pointer;
 }
 
 .logo {
@@ -355,7 +377,7 @@ hr {
 
 .pressNews .previousNews {
     padding-bottom: 2rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     text-align: center;
     cursor: pointer;
     color: #b29600;
@@ -530,7 +552,7 @@ hr {
 }
 
 .newsletter form button:hover,
-.newsletter form button:active{
+.newsletter form button:active {
     background-color: #259C60;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
@@ -635,7 +657,7 @@ hr {
 }
 
 .contactForm button:hover,
-.contactForm button:active{
+.contactForm button:active {
     background-color: #b3b2b2;
     -webkit-box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
     box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
@@ -698,15 +720,14 @@ hr {
     margin: auto;
 
     cursor: pointer;
-    -webkit-transition: opacity .4s, -webkit-transform .1s;
-    transition: opacity .4s, -webkit-transform .1s;
-    transition: opacity .4s, transform .1s;
-    transition: opacity .4s, transform .1s, -webkit-transform .1s;
 
     opacity: .75;
     background-image: url(img/down-arrow-circle-md.png);
     background-repeat: no-repeat;
     background-size: 30px;
+
+
+    transform: translateY(0);
 }
 
 #fp-arrow .next:hover {
@@ -720,7 +741,8 @@ hr {
 }
 
 #fp-arrow .inactive {
-    display: none;
+    opacity: 0;
+    transform: translateY(40px);
 }
 
 @media screen and (max-width: 1200px) {
@@ -732,13 +754,13 @@ hr {
         font-size: 1.8rem;
     }
 
-
 }
 
-@media screen and (min-width: 480px) and (max-width: 1000px){
-    .pressKits .item{
+@media screen and (min-width: 480px) and (max-width: 1000px) {
+    .pressKits .item {
         width: 460px;
     }
+
     .pressKits .item img {
         width: 100%;
     }
@@ -756,15 +778,25 @@ hr {
     #mainMenu .nested-menu li:not(:first-child) a:before {
         right: 5px;
     }
+
     .story p {
         font-size: 2.2rem;
     }
 }
 
 @media screen and (max-width: 768px) {
-    .fp-viewing-company .logo,
+    .fp-viewing-company .logo {
+        margin: 1rem auto;
+        width: 90%;
+        padding-right: 0;
+    }
+
+    #header {
+        padding: 1rem 0;
+    }
+
     .logo {
-        margin: 1rem 0;
+        margin: 1rem auto;
         padding-right: 6rem;
     }
 
@@ -781,7 +813,7 @@ hr {
 
         position: absolute;
         right: 5%;
-        top: 5rem;
+        top: 3.7rem;
 
         width: 5rem;
         height: 4rem;
