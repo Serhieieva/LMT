@@ -24,8 +24,8 @@ $(function () {
             interactiveScrollbars: true
         },
         recordHistory: false,
-        touchSensitivity: 25,
-        normalScrollElementTouchThreshold: 15,
+        touchSensitivity: 30,
+        normalScrollElementTouchThreshold: 1,
         // anchors: [
         //     'company',
         //     'story', 'mission', 'vision', 'values', 'partner', 'push', 'profitability', 'managingBoard', 'supervisoryBoard',
@@ -78,7 +78,7 @@ $(function () {
             noScroll = noScroll || [8, 15].indexOf(nextIndex) >= 0 && direction === 'down';
 
 
-            if (noScroll) {
+            if (noScroll && $(window).width() > 767) {
                 $.fn.fullpage.setScrollingSpeed(0);
             } else {
                 $.fn.fullpage.setScrollingSpeed(700);
@@ -86,8 +86,8 @@ $(function () {
 
         },
         afterResize: function () {
-            setSize();
             $.fn.fullpage.reBuild();
+            setSize();
         },
         afterRender: function () {
             setSize();
@@ -107,8 +107,6 @@ $(function () {
     });
 
     function setSize() {
-        //$('.section .fp-tableCell').css('padding-top', $('#header').outerHeight());
-
         var portfolioContentHeight = Math.max.apply(null, $portfolio.find('.portfolio-content').map(function () {
             return $(this).height();
         }).get());
