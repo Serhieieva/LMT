@@ -282,7 +282,7 @@ hr {
     width: 40%;
 }
 
-.board li:first-child {
+.supervisoryBoard li:first-child {
     width: 100%;
 }
 
@@ -725,6 +725,10 @@ hr {
 }
 
 @media screen and (max-width: 960px) {
+    #header hr {
+        height: 2px;
+    }
+
     #mainMenu li:not(:last-child) {
         margin-right: 1rem;
     }
