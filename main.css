@@ -44,6 +44,12 @@ h4 {
     font-size: 1.8rem;
 }
 
+.clearfix:after {
+    content: " ";
+    clear: both;
+    display: table;
+}
+
 .fp-responsive .section:not(:first-child) {
     height: auto !important;
 }
@@ -288,7 +294,7 @@ hr {
     font-size: 4.9rem;
     color: #b3b2b2;
     text-decoration: none;
-    cursor: default;
+    cursor: pointer;
 }
 
 .strategy a:hover, a.active {
@@ -444,7 +450,7 @@ hr {
 
 .pressKits .bordered {
     border: 1px solid #b29600;
-    box-shadow: 0 0 5px 1px rgba(178, 150, 0, 0.14);
+    box-shadow: 0 0 5px 1px rgba(178, 150, 0, 0.14),0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     padding: 1rem;
 }
 
@@ -462,7 +468,12 @@ hr {
 }
 
 .pressKits .banners img {
-    width: 80%;
+    max-width: 80%;
+}
+
+.pressKits .banners .bannerTeam {
+    padding: 10px;
+    max-width: 100%;
 }
 
 .pressKits .banners img:last-child {
@@ -511,7 +522,7 @@ hr {
     }
 
     .pressKits .banners img {
-        width: 100%;
+        max-width: 80%;
     }
 }
 
@@ -566,6 +577,7 @@ hr {
 
     text-transform: uppercase;
 
+    cursor: pointer;
     color: #fff;
     outline: 0;
     background-color: #24aa6b;
@@ -675,7 +687,8 @@ hr {
     background-color: #c0c0c0;
     display: block;
     cursor: pointer;
-    margin-left: 80%;
+    float: right;
+    margin-right: 22px;
     margin-top: 5px;
     border: none;
     width: 97px;
@@ -982,6 +995,10 @@ hr {
     .contactForm .contacts,
     .contactForm .subject {
         display: block;
+    }
+
+    .contactForm button {
+        margin-right: 0;
     }
 
     .contactForm .contacts {
