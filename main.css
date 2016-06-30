@@ -155,6 +155,26 @@ h4 {
     display: none;
 }
 
+.popup {
+    display: none;
+    box-shadow: 0 5px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22), 0 0 0 3000px rgba(256, 256, 256, .8);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    background-color: #fff;
+    overflow: hidden;
+    padding: 20px;
+    text-align: left;
+    z-index: 2;
+    font-size: 1.8rem;
+}
+
+.newsletter .sheet {
+    max-width: 600px;
+}
+
 hr {
     width: 90%;
     background-color: #000;
@@ -642,6 +662,7 @@ hr {
 }
 
 .contactForm [name=subject] {
+    min-width: 300px;
     width: 40%;
 }
 
@@ -788,7 +809,6 @@ hr {
         font-size: 2.2rem;
     }
 }
-
 @media screen and (max-width: 768px) {
     .fp-viewing-company .logo {
         margin: 1rem auto;
@@ -952,6 +972,40 @@ hr {
     .newsletter form button {
         min-width: initial;
         width: 90%;
+    }
+
+    .contactForm .sheet:first-child{
+        padding: 15px;
+        box-shadow: none;
+    }
+
+    .contactForm .contacts,
+    .contactForm .subject {
+        display: block;
+    }
+
+    .contactForm .contacts {
+        text-align: left;
+        margin-bottom: 2rem;
+    }
+
+    .contactForm .subject {
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+.contactForm button {
+    margin-left: 65%;
+}
+    .contactForm .contacts{
+        min-width: 290px;
+    }
+
+    .contactForm [name=subject] {
+        min-width: 244px;
     }
 }
 
